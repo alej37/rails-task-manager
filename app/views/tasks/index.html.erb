@@ -8,4 +8,10 @@
     <input type="checkbox" name="task_completed">
     <label for="task_title"><%= link_to task[:title], task_path(task[:id]) %></label>
   <% end %>
+  <%= link_to "Delete",
+    task_path(task),
+    method: :delete,
+    data: {confirm: "Are you sure?" } %>
 <% end %>
+
+<%= link_to 'Add new task', new_task_path %>
